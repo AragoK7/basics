@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 200vh;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightcoral;
+}
+
+.navbar{
+    border: 1px dotted darkviolet;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 4px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 42px;
+    font-weight: bold;
+    font-style: italic;
+    color: wheat;
+
+}
+.navbar-links ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.navbar-links li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 16px 24px;
+    font-size: 18px;
+}
+.navbar-links li:hover{
+    background-color: deeppink;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+.toggle-button:hover{
+    cursor: pointer;
+}
+
+.bar{
+    background-color: black;
+    width: 100%;
+    height: 5px;
+    border-radius: 30%;
+}
+
+@media (max-width: 800px){
+    .navbar{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .navbar.toggled{
+        position: fixed;
+        background-color: green;
+        height: 100vh;
+    }
+    .toggle-button{
+        display: flex;
+    }
+    .navbar-links{
+        display: none;
+        width: 100%;
+    }
+    .navbar-links ul{
+        flex-direction: column;
+    }
+    .navbar-links ul li{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-links.toggled{
+        display: block;
+    }
+    .toggle-button.toggled .bar{
+        position: absolute;
+        top: 10px;
+        left: 0;
+    }
+    .toggle-button.toggled .bar:first-of-type{
+        transform: rotate(45deg);
+    }
+    .toggle-button.toggled .bar:last-of-type{
+        transform: rotate(-45deg);
+
+    }
+    .toggle-button.toggled .bar:nth-of-type(2){
+        display: none;
+    }
+}
+
